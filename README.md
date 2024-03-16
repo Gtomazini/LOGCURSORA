@@ -6,4 +6,4 @@ que está personalizada (vetores, css, etc.).
 ## Front
 React native
 ## Back
-expressjs
+expressjs com MySQL

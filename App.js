@@ -6,7 +6,8 @@ import {css} from './assets/CSS/Css';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {Home, Login, Rastreio} from './views/Index'
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import AreaInterna from './views/internal/AreaInterna';
 export default function App() {
 
 
@@ -31,6 +32,7 @@ export default function App() {
         options={{headerShown:false}}
          />
         <Stack.Screen name="Rastreio" component={Rastreio} />
+        <Stack.Screen name="AreaInterna" component={AreaInterna} />
       </Stack.Navigator>
     </NavigationContainer>
   );

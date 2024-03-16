@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from "react";
 import { Text, View, KeyboardAvoidingView, Image, TextInput, TouchableOpacity, Platform } from 'react-native';
 import {css} from '../assets/CSS/Css';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
-export default function Login(props)
+export default function Login({navigation})
 {
 
     const[display, setDisplay]=useState('none');
@@ -31,6 +32,10 @@ export default function Login(props)
             setDisplay('none');
         },
         5000);
+        await AsyncStorage.clear();
+    }else{
+        await AsyncStorage.setItem('userData', JSON.stringify(json));
+        navigation.navigate('AreaInterna');
     }
     }
 
